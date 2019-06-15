@@ -10,6 +10,7 @@
 curl -X POST \
   http://localhost:8001/api/v1/tickets/new/ \
   -H 'Content-Type: application/json' \
+  -H 'Authorization: token b530861c818419a500e176d785e130a165a9a23e' \
   -d '{
 	"title": "test",
 	"description": "This is a test."
@@ -21,6 +22,7 @@ curl -X POST \
 curl -X GET \
   http://localhost:8001/api/v1/tickets/list/ \
   -H 'Content-Type: application/json' \
+  -H 'Authorization: token b530861c818419a500e176d785e130a165a9a23e' \
 ```
 
 **Generación de token para usuario**
@@ -31,6 +33,17 @@ curl -X POST \
   -d '{
 	"username": "admin",
 	"password": "admin123"
+}'
+```
+
+**Información de un usuario**
+```shell
+curl -X POST \
+  http://localhost:8001/api/v1/users/detail/ \
+  -H 'Authorization: token b530861c818419a500e176d785e130a165a9a23e' \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"username": "admin"
 }'
 ```
 
