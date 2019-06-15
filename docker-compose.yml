@@ -1,0 +1,18 @@
+version: '2'
+services:
+  postgres:
+    build:
+      dockerfile: ./docker/postgres/Dockerfile
+      context: .
+    ports:
+      - 5433:5432
+  web:
+    build: .
+    volumes:
+      - .:/home/projects/challenge/
+    depends_on:
+      - postgres
+    ports:
+      - 8001:8001
+     command: bash -c "pip install -r requirements.txt ; python manage.py runserver 0.0.0.0:8001"
+    tty: true

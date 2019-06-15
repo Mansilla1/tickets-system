@@ -1,0 +1,15 @@
+led / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Django stuff:
+*.log
+*.pot
+
+# PyCharm IDE
+.idea/
+
+# VSCode
+\.vscode/
+
+.DS_Store
