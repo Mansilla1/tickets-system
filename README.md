@@ -3,6 +3,27 @@
 ## Requerimientos
 * Docker (docker-compose)
 
+## Ejecución
+Entrar a la imagen docker
+```shell
+docker exec -it tickets-system_web_1 /bin/bash
+```
+
+Instalar paquetes
+```shell
+pip install -r requirements.txt
+```
+
+Ejecutar migraciones
+```shell
+python manage.py migrate
+```
+
+Ejecutar servidor
+```shell
+python manage.py runserver 0.0.0.0:8001
+```
+
 ## ¿Cómo funciona?
 
 **Creación de tickets**
