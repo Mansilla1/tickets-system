@@ -1,8 +1,8 @@
 version: '2'
 services:
-  postgres:
+  db:
     build:
-      dockerfile: ./docker/postgres/Dockerfile
+      dockerfile: ./db/postgres/Dockerfile
       context: .
     ports:
       - 5433:5432
@@ -11,8 +11,8 @@ services:
     volumes:
       - .:/home/projects/challenge/
     depends_on:
-      - postgres
+      - db
     ports:
       - 8001:8001
-#    command: bash -c "pip install -r requirements.txt ; python manage.py runserver 0.0.0.0:8001"
+#    command: bash -c "cd backend/ ; pip install -r requirements.txt ; python manage.py runserver 0.0.0.0:8001"
     tty: true
